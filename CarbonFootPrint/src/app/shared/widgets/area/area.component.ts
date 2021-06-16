@@ -25,14 +25,14 @@ export class AreaComponent implements OnInit {
         type: 'area'
       },
       title: {
-        text: 'Random DATA'
+        text: 'Carbon Footprint'
       },
       subtitle: {
-        text: 'Demo'
+        text: 'Your annual emissions'
       },
       tooltip: {
         split: true,
-        valueSuffix: ' millions'
+        valueSuffix: ' Kgs'
       },
       credits: {
         enabled: false

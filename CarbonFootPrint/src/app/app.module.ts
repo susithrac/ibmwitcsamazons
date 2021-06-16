@@ -41,6 +41,7 @@ import { ProductComponent } from './product/product.component';
 import { FoodComponent } from './food/food.component';
 import { ServiceComponent } from './service/service.component';
 import { PlantingComponent } from './planting/planting.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -83,6 +84,7 @@ import { PlantingComponent } from './planting/planting.component';
     MatSidenavModule,
     MatGridListModule,
     HighchartsChartModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,

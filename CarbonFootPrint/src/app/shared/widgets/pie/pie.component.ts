@@ -13,6 +13,7 @@ export class PieComponent implements OnInit {
   chartOptions = {};
 
   @Input() data = [];
+  @Input() chartTitle:string='Title';
 
   constructor() { }
 
@@ -25,7 +26,7 @@ export class PieComponent implements OnInit {
         type: 'pie'
       },
       title: {
-        text: 'RANDOM DATA'
+        text: this.chartTitle
       },
       tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'

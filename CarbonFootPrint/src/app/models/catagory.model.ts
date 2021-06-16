@@ -1,4 +1,8 @@
 export class Catagory{
+    _id: string;
+    name:string;
+    month:string;
+    year:string;
 housing:Housing=new Housing();
 travel:Travel=new Travel();
 food:Food=new Food();

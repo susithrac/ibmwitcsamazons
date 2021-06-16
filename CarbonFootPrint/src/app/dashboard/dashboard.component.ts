@@ -40,7 +40,18 @@ export class DashboardComponent implements OnInit {
 
   bigChart:any[] = [];
   cards:any[] = [];
-  pieChart :any[] = [];
+  pieChartHousing :any[] = [];
+  pieChartTravel :any[] = [];
+  pieChartFood:any[]=[];
+  pieChartProducts:any[]=[];
+  pieChartServices:any[]=[];
+
+  pieChartHousingTitle :string="Housing";
+  pieChartTravelTitle :string="Travel";
+  pieChartFoodTitle:string="Foods";
+  pieChartProductsTitle:string="Products";
+  pieChartServicesTitle:string="Services";
+
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
@@ -50,14 +61,21 @@ export class DashboardComponent implements OnInit {
   constructor(private dashboardService: DashboardService) {
     this.bigChart = [];
     this.cards = [];
-    this.pieChart = [];
+    this.pieChartHousing = [];
+    this.pieChartTravel = [];
+    this.pieChartFood=[];
+    this.pieChartProducts=[];
+    this.pieChartServices=[];
    }
 
   ngOnInit() {
     this.bigChart = this.dashboardService.bigChart();
     this.cards = this.dashboardService.cards();
-    this.pieChart = this.dashboardService.pieChart();
-
+    this.pieChartHousing = this.dashboardService.pieChartHousing();
+    this.pieChartTravel = this.dashboardService.pieChartTravel();
+    this.pieChartFood = this.dashboardService.pieChartFood();
+    this.pieChartProducts = this.dashboardService.pieChartProducts();
+    this.pieChartServices = this.dashboardService.pieChartServices();
     this.dataSource.paginator = this.paginator;
   }
 

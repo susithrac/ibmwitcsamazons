@@ -1,10 +1,11 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
 import { Catagory } from '../models/catagory.model';
 import { User } from '../models/user.model';
-
+import { catchError, retry } from 'rxjs/operators';
+import { throwError } from 'rxjs/internal/observable/throwError';
 @Injectable({
   providedIn: 'root'
 })
@@ -23,10 +24,22 @@ export class CommonService {
 
     addCarbonData(catagory:Catagory): Observable<any> {
       const headers = { 'content-type': 'application/json'} 
-      debugger;
-      catagory.name=this.user.Name; 
       const body=JSON.stringify(catagory);
       console.log(body)
-      return this.http.post(this.baseURL + '/users', body,{'headers':headers})
+      return this.http.post(this.baseURL + '/users/user', body,{'headers':headers}).pipe(
+        catchError(this.handleError)
+        );
+    }
+    handleError(error: HttpErrorResponse) {
+      let errorMessage = 'Unknown error!';
+      if (error.error instanceof ErrorEvent) {
+        // Client-side errors
+        errorMessage = `Error: ${error.error.message}`;
+      } else {
+        // Server-side errors
+        errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+      }
+      window.alert(errorMessage);
+      return throwError(errorMessage);
     }
 }

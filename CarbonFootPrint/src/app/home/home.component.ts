@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Catagory } from '../models/catagory.model';
+import { User } from '../models/user.model';
+import { CommonService } from '../Services/common.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +12,8 @@ import { Catagory } from '../models/catagory.model';
 export class HomeComponent implements OnInit {
   catagory : Catagory=new Catagory();
   step = 0;
-
+  user:User;
+  isLoading:boolean=false;
   @Input() displayState: string;
   @Input() userName: string;
 
@@ -25,7 +29,7 @@ export class HomeComponent implements OnInit {
     this.step--;
   }
 
-  constructor() {
+  constructor(private commonService: CommonService,private _snackBar: MatSnackBar) {
     
    }
 
@@ -34,8 +38,23 @@ export class HomeComponent implements OnInit {
 
   save()
   {
-    debugger;
-    let dd=this.catagory;
+    this.isLoading=true;
+    this.commonService.GetUserData.subscribe(user => this.user = user);
+    this.catagory._id="csamazon:"+this.user.email;
+    this.catagory.name=this.user.email;
+    this.commonService.addCarbonData(this.catagory)
+    .subscribe(data => {
+      console.log(data)
+    }) ;
+
+    setTimeout(() => {
+      this.isLoading=false;
+      this._snackBar.open("Record has been saved successfully", "Close",{duration:3000});
+      this.catagory=new Catagory();
+     }, 3000);
+ 
+
+    
   }
 
 

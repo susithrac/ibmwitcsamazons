@@ -42,7 +42,7 @@ import { FoodComponent } from './food/food.component';
 import { ServiceComponent } from './service/service.component';
 import { PlantingComponent } from './planting/planting.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,6 +75,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     MatButtonModule,
     MatTableModule,
+    MatSnackBarModule,
     MatDialogModule,
     MatRadioModule,
     MatListModule,

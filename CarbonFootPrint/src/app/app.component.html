@@ -1,10 +1,7 @@
-<!-- <app-header (toggleSideBarForMe)="sideBarToggler()"></app-header> -->
 <ng-container *ngIf="!isShowmaster">
 <app-welcome style="background: url('../../assets/forestbridge.jpg') no-repeat;background-size: 100% 100%;height: 100%;" (changeState)="onChangeState($event)"></app-welcome>
 </ng-container>
-<!-- <app-welcome></app-welcome> -->
-<!-- <app-home [imageSrc]="src" ></app-home> -->
+
 <ng-container *ngIf="isShowmaster">
     <app-landing [userName]="'Susi'"></app-landing> 
 </ng-container>
-<!-- <app-landing [displayState]="displayStateStatus" [userName]="'Susi'"></app-landing> -->

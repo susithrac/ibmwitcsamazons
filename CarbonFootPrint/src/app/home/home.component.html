@@ -5,6 +5,18 @@
 <mat-toolbar class="title-bg-color">
   <span>Calculate Carbon Emissions</span>
 </mat-toolbar>
+  <mat-form-field appearance="fill" class="marginright">
+    <mat-label>Select Month</mat-label>
+    <mat-select [(value)]="catagory.month">
+      <mat-option *ngFor="let month of monthList" [value]="month.value">{{month.title}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill" >
+    <mat-label>Select Year</mat-label>
+    <mat-select [(value)]="catagory.year">
+      <mat-option *ngFor="let year of yearList" [value]="year">{{year}}</mat-option>
+    </mat-select>
+  </mat-form-field>
 
 <mat-accordion class="example-headers-align">
   <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>

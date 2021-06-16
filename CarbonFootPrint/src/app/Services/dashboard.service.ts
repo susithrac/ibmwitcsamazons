@@ -63,6 +63,7 @@ export class DashboardService {
     }];
   }
 
+
 pieChartHousing() {
   return [{
     name: 'Electricity',

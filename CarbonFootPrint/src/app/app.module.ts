@@ -43,6 +43,7 @@ import { ServiceComponent } from './service/service.component';
 import { PlantingComponent } from './planting/planting.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatSelectModule} from '@angular/material/select';
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,6 +84,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     FlexLayoutModule,
     MatPaginatorModule,
     MatSidenavModule,
+    MatSelectModule,
     MatGridListModule,
     HighchartsChartModule,
     HttpClientModule,

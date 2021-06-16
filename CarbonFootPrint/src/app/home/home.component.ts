@@ -16,7 +16,25 @@ export class HomeComponent implements OnInit {
   isLoading:boolean=false;
   @Input() displayState: string;
   @Input() userName: string;
-
+  
+  monthList=[
+    { title:"JAN", value:"1" },
+    { title:"FEB", value:"2" },
+    { title:"MAR", value:"3" },
+    { title:"APR", value:"4" },
+    { title:"MAY", value:"5" },
+    { title:"JUN", value:"6" },
+    { title:"JUL", value:"7" },
+    { title:"AUG", value:"8" },
+    { title:"SEP", value:"9" },
+    { title:"OCT", value:"10" },
+    { title:"NOV", value:"11" },
+    { title:"DEC", value:"12" }
+  ]
+  yearList=[
+   "2019" ,"2020","2021"
+  ]
+ 
   setStep(index: number) {
     this.step = index;
   }
@@ -30,10 +48,11 @@ export class HomeComponent implements OnInit {
   }
 
   constructor(private commonService: CommonService,private _snackBar: MatSnackBar) {
-    
    }
 
   ngOnInit(): void {
+    this.catagory.month="1";
+    this.catagory.year="2021"
   }
 
   save()
@@ -52,10 +71,6 @@ export class HomeComponent implements OnInit {
       this._snackBar.open("Record has been saved successfully", "Close",{duration:3000});
       this.catagory=new Catagory();
      }, 3000);
- 
-
-    
   }
-
 
 }

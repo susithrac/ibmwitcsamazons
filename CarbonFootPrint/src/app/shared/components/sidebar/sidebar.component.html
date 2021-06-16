@@ -1,0 +1,34 @@
+<mat-nav-list>
+    <div class="profile-card">
+        <div class="header">
+            <h2>{{user.Name}}</h2>
+            <h4>{{user.email}}</h4>
+        </div>
+        <!-- <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Soufiane FADIL"> -->
+        <!-- <img [src]="user.pic" alt="No img found"> -->
+        <img class="thumbnail-image" src="{{user.pic}}" onerror="this.onerror=null;this.src='assets/usericon.jpg'" alt="No image found" />
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <h2 matSubheader>Pages</h2>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/home">Home</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard">Dashboard</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/articles">Articles</a>
+
+    <mat-divider></mat-divider>
+
+    <h2 matSubheader>Tools</h2>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
+        <mat-icon>import_contacts</mat-icon>
+        Contacts
+    </a>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
+        <mat-icon>contact_phone</mat-icon>
+        Leads
+    </a>
+
+</mat-nav-list>

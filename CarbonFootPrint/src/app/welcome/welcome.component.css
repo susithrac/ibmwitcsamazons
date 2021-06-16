@@ -1,0 +1,26 @@
+/* #sect1 {  
+    color: #fff;
+    background-image: url('../../assets/forestbridge.jpg') no-repeat;;  
+    background-size: 100% ;  
+    background-size:cover;  
+} */
+
+.top-animation
+{
+    position: relative; 
+    animation: animatetop 0.9s; 
+    margin-top: 30px;
+}
+.title-class{
+    /* color: white; */
+    font-size: 64px
+}
+.multicolortext {
+    background-image: linear-gradient(to left, green, red, green, blue, yellow, orange, green);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+

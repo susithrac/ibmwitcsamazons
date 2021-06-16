@@ -1,0 +1,97 @@
+.title-bg-color{
+    background: cadetblue;
+}
+
+.img-width{
+    width: 200px;
+}
+
+div.item {
+    /* To correctly align image, regardless of content height: */
+    vertical-align: top;
+    display: inline-block;
+    /* To horizontally center images and caption */
+    text-align: center;
+    /* The width of the container also implies margin around the images. */
+    width: 120px;
+}
+img {
+    width: 100px;
+    height: 100px;
+    background-color: grey;
+}
+.caption {
+    /* Make the caption a block so it occupies its own line. */
+    display: block;
+    padding-top: 10%;
+}
+
+.item img{
+    transition: 1s ease;
+}
+    
+    .item img:hover{
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    transition: 1s ease;
+    }
+
+    .articleMargin {
+        margin-top:5%;
+    }
+
+    .plane {
+        background: url("/assets/plane.png") no-repeat;
+        background-size: cover;
+        padding-bottom: 82%;
+    }
+    .plane:hover {
+        background: url("/assets/plane-hover.png") no-repeat;
+        background-size: cover;
+    }
+    .plant {
+        background: url("/assets/plant.png") no-repeat;
+        background-size: cover;
+        padding-bottom: 82%;
+    }
+    .plant:hover {
+        background: url("/assets/plant-hover.png") no-repeat;
+        background-size: cover;
+    }
+    .cart {
+        background: url("/assets/cart.png") no-repeat;
+        background-size: cover;
+        padding-bottom: 82%;
+    }
+    .cart:hover {
+        background: url("/assets/cart-hover.png") no-repeat;
+        background-size: cover;
+    }
+    .hospital {
+        background: url("/assets/hospital.png") no-repeat;
+        background-size: cover;
+        padding-bottom: 82%;
+    }
+    .hospital:hover {
+        background: url("/assets/hospital-hover.png") no-repeat;
+        background-size: cover;
+    }
+    .food {
+        background: url("/assets/food.png") no-repeat;
+        background-size: cover;
+        padding-bottom: 82%;
+    }
+    .food:hover {
+        background: url("/assets/food-hover.png") no-repeat;
+        background-size: cover;
+    }
+    .home {
+        background: url("/assets/home.png") no-repeat;
+        background-size: cover;
+        padding-bottom: 82%;
+    }
+    .home:hover {
+        background: url("/assets/home-hover.png") no-repeat;
+        background-size: cover;
+    }

@@ -16,7 +16,9 @@ export class CommonService {
   public isshowSideBar=true;
   baseURL:string="https://csamazons-toolchain.eu-gb.mybluemix.net"
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.user.email="amolhackthontest@gmail.com";
+   }
 
   SetUser(setUser: User) {
     this.userData.next(setUser)
@@ -30,6 +32,13 @@ export class CommonService {
         catchError(this.handleError)
         );
     }
+    getMainchatData(username:string): Observable<any> {
+      return this.http.get(this.baseURL + '/users/'+username+"/abc").pipe(
+        catchError(this.handleError)
+        );
+    }
+
+
     handleError(error: HttpErrorResponse) {
       let errorMessage = 'Unknown error!';
       if (error.error instanceof ErrorEvent) {

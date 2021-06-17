@@ -51,14 +51,16 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.catagory.month="1";
-    this.catagory.year="2021"
+    // this.catagory.month="1";
+    // this.catagory.year="2021"
   }
 
   save()
   {
     this.isLoading=true;
     this.commonService.GetUserData.subscribe(user => this.user = user);
+
+    debugger
     this.catagory._id="csamazon:"+this.user.email;
     this.catagory.name=this.user.email;
     this.commonService.addCarbonData(this.catagory)

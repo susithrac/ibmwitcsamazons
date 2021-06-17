@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { DashboardService } from '../Services/dashboard.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { CommonService } from '../Services/common.service';
+import { User } from '../models/user.model';
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -37,7 +39,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
+  user:User;
   bigChart:any[] = [];
   cards:any[] = [];
   pieChartHousing :any[] = [];
@@ -58,7 +60,7 @@ export class DashboardComponent implements OnInit {
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
-  constructor(private dashboardService: DashboardService) {
+  constructor(private dashboardService: DashboardService,private commonService: CommonService) {
     this.bigChart = [];
     this.cards = [];
     this.pieChartHousing = [];
@@ -69,7 +71,14 @@ export class DashboardComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.bigChart = this.dashboardService.bigChart();
+    this.commonService.GetUserData.subscribe(user => this.user = user);
+    
+    //Static data for Main chart
+    // this.bigChart = this.dashboardService.bigChart();
+     
+    //Dynamic data for char
+    this.getbigChartData();
+   
     this.cards = this.dashboardService.cards();
     this.pieChartHousing = this.dashboardService.pieChartHousing();
     this.pieChartTravel = this.dashboardService.pieChartTravel();
@@ -78,5 +87,19 @@ export class DashboardComponent implements OnInit {
     this.pieChartServices = this.dashboardService.pieChartServices();
     this.dataSource.paginator = this.paginator;
   }
+
+ getbigChartData()
+ {
+  this.commonService.getMainchatData(this.user.email).subscribe((data:any[])=>this.bigChart=data);
+}
+    
+//     {
+//  let arry=[];
+//     data.forEach(function (item) {
+//       arry.push(item);
+//         });
+//         this.bigChart=arry;
+//         console.log(this.bigChart)
+//   });
 
 }

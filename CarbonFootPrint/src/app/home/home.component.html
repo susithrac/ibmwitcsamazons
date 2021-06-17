@@ -37,15 +37,7 @@
         </mat-form-field>
         <span class="unit">(kWh/yr)</span>
       </mat-list-item>
-      <!-- <mat-divider></mat-divider> -->
-      <mat-list-item>
-        <mat-form-field>
-          <mat-label>Natural Gas</mat-label>
-          <input matInput [(ngModel)]="catagory.housing.naturalGas" type="number" min="0">
-        </mat-form-field>
-        <span class="unit">(therms/yr)</span>
-      </mat-list-item>
-      <!-- <mat-divider></mat-divider> -->
+      
       <mat-list-item>
         <mat-form-field>
           <mat-label>Fuel Oil</mat-label>
@@ -112,13 +104,6 @@
       </mat-list-item>
       <mat-list-item>
         <mat-form-field>
-          <mat-label>Metro</mat-label>
-          <input matInput [(ngModel)]="catagory.travel.metro" type="number" min="0">
-        </mat-form-field>
-        <span class="unit">(km/yr)</span>
-      </mat-list-item>
-      <mat-list-item>
-        <mat-form-field>
           <mat-label>Taxi</mat-label>
           <input matInput [(ngModel)]="catagory.travel.taxi" type="number" min="0">
         </mat-form-field>
@@ -174,13 +159,6 @@
       </mat-list-item>
       <mat-list-item>
         <mat-form-field>
-          <mat-label>Cereals</mat-label>
-          <input matInput [(ngModel)]="catagory.food.cereals" type="number" min="0">
-        </mat-form-field>
-        <span class="unit">(kCal/day)</span>
-      </mat-list-item>
-      <mat-list-item>
-        <mat-form-field>
           <mat-label>Vegetables</mat-label>
           <input matInput type="number" [(ngModel)]="catagory.food.vegetables" min="0">
         </mat-form-field>
@@ -193,158 +171,23 @@
         </mat-form-field>
         <span class="unit">(kCal/day)</span>
       </mat-list-item>
+    
       <mat-list-item>
         <mat-form-field>
-          <mat-label>Oils</mat-label>
-          <input matInput type="number" [(ngModel)]="catagory.food.oils" min="0">
+          <mat-label>Grains</mat-label>
+          <input matInput type="number" [(ngModel)]="catagory.food.grains" min="0">
         </mat-form-field>
         <span class="unit">(kCal/day)</span>
       </mat-list-item>
-      <mat-list-item>
-        <mat-form-field>
-          <mat-label>Snacks</mat-label>
-          <input matInput type="number" [(ngModel)]="catagory.food.snacks" min="0">
-        </mat-form-field>
-        <span class="unit">(kCal/day)</span>
-      </mat-list-item>
-      <mat-list-item>
-        <mat-form-field>
-          <mat-label>Drinks</mat-label>
-          <input matInput type="number" [(ngModel)]="catagory.food.drinks" min="0">
-        </mat-form-field>
-        <span class="unit">(kCal/day)</span>
-      </mat-list-item>
+      
     </mat-list>
 
     <mat-action-row>
       <button mat-button color="warn" (click)="prevStep()">Previous</button>
-      <button mat-button color="primary" (click)="nextStep()">Next</button>
+      <button mat-button color="primary" (click)="nextStep()">End</button>
     </mat-action-row>
   </mat-expansion-panel>
-
-  <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Products
-      </mat-panel-title>
-      <mat-panel-description>
-        <span class="spacer"></span>
-        <mat-icon>shopping_cart</mat-icon>
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-
-    <mat-list>
-      <mat-list-item>
-        <mat-form-field>
-          <mat-label>Electronics</mat-label>
-          <input matInput [(ngModel)]="catagory.products.electronics" type="number" min="0">
-        </mat-form-field>
-        <span class="unit">(₹/month)</span>
-      </mat-list-item>
-      <mat-list-item>
-        <mat-form-field>
-          <mat-label>Household</mat-label>
-          <input matInput [(ngModel)]="catagory.products.household" type="number" min="0">
-        </mat-form-field>
-        <span class="unit">(₹/month)</span>
-      </mat-list-item>
-      <mat-list-item>
-        <mat-form-field>
-          <mat-label>Clothes</mat-label>
-          <input matInput [(ngModel)]="catagory.products.clothes" type="number" min="0">
-        </mat-form-field>
-        <span class="unit">(₹/month)</span>
-      </mat-list-item>
-      <mat-list-item>
-        <mat-form-field>
-          <mat-label>Medical</mat-label>
-          <input matInput type="number" [(ngModel)]="catagory.products.medical" min="0">
-        </mat-form-field>
-        <span class="unit">(₹/month)</span>
-      </mat-list-item>
-      <mat-list-item>
-        <mat-form-field>
-          <mat-label>Recreational</mat-label>
-          <input matInput type="number" [(ngModel)]="catagory.products.recreational" min="0">
-        </mat-form-field>
-        <span class="unit">(₹/month)</span>
-      </mat-list-item>
-      <mat-list-item>
-        <mat-form-field>
-          <mat-label>Other</mat-label>
-          <input matInput [(ngModel)]="catagory.products.other" type="number" min="0">
-        </mat-form-field>
-        <span class="unit">(₹/month)</span>
-      </mat-list-item>
-    </mat-list>
-
-    <mat-action-row>
-      <button mat-button color="warn" (click)="prevStep()">Previous</button>
-      <button mat-button color="primary" (click)="nextStep()">Next</button>
-    </mat-action-row>
-  </mat-expansion-panel>
-
-  <mat-expansion-panel [expanded]="step === 4" (opened)="setStep(4)" hideToggle>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Services
-      </mat-panel-title>
-      <mat-panel-description>
-        <span class="spacer"></span>
-        <mat-icon>local_hospital</mat-icon>
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-
-    <mat-list>
-      <mat-list-item>
-        <mat-form-field>
-          <mat-label>Health</mat-label>
-          <input matInput [(ngModel)]="catagory.services.health" type="number" min="0">
-        </mat-form-field>
-        <span class="unit">(₹/month)</span>
-      </mat-list-item>
-      <mat-list-item>
-        <mat-form-field>
-          <mat-label>Finance</mat-label>
-          <input matInput [(ngModel)]="catagory.services.finance" type="number" min="0">
-        </mat-form-field>
-        <span class="unit">(₹/month)</span>
-      </mat-list-item>
-      <mat-list-item>
-        <mat-form-field>
-          <mat-label>Recreation</mat-label>
-          <input matInput [(ngModel)]="catagory.services.recreation" type="number" min="0">
-        </mat-form-field>
-        <span class="unit">(₹/month)</span>
-      </mat-list-item>
-      <mat-list-item>
-        <mat-form-field>
-          <mat-label>Education</mat-label>
-          <input matInput [(ngModel)]="catagory.services.education" type="number" min="0">
-        </mat-form-field>
-        <span class="unit">(₹/month)</span>
-      </mat-list-item>
-      <mat-list-item>
-        <mat-form-field>
-          <mat-label>Communications</mat-label>
-          <input matInput [(ngModel)]="catagory.services.communications" type="number" min="0">
-        </mat-form-field>
-        <span class="unit">(₹/month)</span>
-      </mat-list-item>
-      <mat-list-item>
-        <mat-form-field>
-          <mat-label>Other</mat-label>
-          <input matInput [(ngModel)]="catagory.services.other" type="number" min="0">
-        </mat-form-field>
-        <span class="unit">(₹/month)</span>
-      </mat-list-item>
-    </mat-list>
-
-    <mat-action-row>
-      <button mat-button color="warn" (click)="prevStep()">Previous</button>
-      <!-- <button mat-button color="primary" (click)="nextStep()">Next</button> -->
-    </mat-action-row>
-  </mat-expansion-panel>
+ 
 </mat-accordion>
 
 <mat-divider></mat-divider>

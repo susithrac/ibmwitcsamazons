@@ -43,6 +43,7 @@ export class LandingComponent implements OnInit {
   }
   logOut()
   {
+    this.sideBarOpen = false;
     this.router.navigate(['/']);
   }
 

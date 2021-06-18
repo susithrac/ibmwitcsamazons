@@ -14,15 +14,14 @@ export class AppComponent {
   constructor(private router: Router) { }
 
   ngOnInit() {
+    this.isShowmaster=false;
   }
 
-  // displayStateStatus = 'hide';
   isShowmaster=false;
   userNameStatus = '';
   onChangeState(value) {
     console.log("Sush");
     console.log(value.email);
-    // this.displayStateStatus = 'show';
     this.isShowmaster=true;
     this.userNameStatus = value.userName;
     this.src = value.picture;

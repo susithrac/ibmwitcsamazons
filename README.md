@@ -47,7 +47,7 @@ Calculating Carbon footprint according to various factors can make people aware 
 
 ## Demo video
 
-[![Watch the video](https://github.com/Call-for-Code/Liquid-Prep/blob/master/images/readme/IBM-interview-video-image.png)](https://youtu.be/vOgCOoy_Bx0)
+[![Watch the video](https://github.com/Call-for-Code/Liquid-Prep/blob/master/images/readme/IBM-interview-video-image.png)](https://youtu.be/0iSVCeIJEqY)
 
 ## The architecture
 
@@ -84,7 +84,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Live demo
 
-You can find a running system to test at [callforcode.mybluemix.net](http://callforcode.mybluemix.net/).
+You can find a running system to test at [callforcode.mybluemix.net](https://csamazons-toolchain.eu-gb.mybluemix.net/).
 
 ## Built with
 

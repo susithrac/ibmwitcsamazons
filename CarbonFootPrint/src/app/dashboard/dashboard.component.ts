@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DashboardService } from '../Services/dashboard.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { CommonService } from '../Services/common.service';
@@ -60,7 +59,7 @@ export class DashboardComponent implements OnInit {
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
-  constructor(private dashboardService: DashboardService,private commonService: CommonService) {
+  constructor(private commonService: CommonService) {
     this.bigChart = [];
     this.cards = [];
     this.pieChartHousing = [];

@@ -10,7 +10,6 @@ HC_exporting(Highcharts);
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AreaComponent implements OnInit, OnChanges {
-
   updateFromInput = false;
   chart;
   chartOptions: Highcharts.Options = {
@@ -53,8 +52,6 @@ export class AreaComponent implements OnInit, OnChanges {
 
   ngOnInit() {
 
-    //HC_exporting(Highcharts); 
-
     setTimeout(() => {
       window.dispatchEvent(
         new Event('resize')
@@ -65,8 +62,6 @@ export class AreaComponent implements OnInit, OnChanges {
 
   ngOnChanges(change: SimpleChanges) {
     if (change.data.currentValue && change.data.currentValue.length > 0) {
-      // this.chartOptions.series = change.data.currentValue;
-      // this.updateFromInput = true;
       const self = this,
         chart = this.chart;
       chart.showLoading();
@@ -74,7 +69,6 @@ export class AreaComponent implements OnInit, OnChanges {
         self.chartOptions.series = change.data.currentValue;
         chart.hideLoading();
     }
-    console.log(change);
   }
 
 }

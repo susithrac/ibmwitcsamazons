@@ -17,7 +17,7 @@ export class CommonService {
   baseURL:string="https://csamazons-toolchain.eu-gb.mybluemix.net"
 
   constructor(private http: HttpClient) {
-    //this.user.email="amolhackthontest@gmail.com";
+  //this.user.email="lande.amol.b@gmail.com";
    }
 
   SetUser(setUser: User) {
@@ -33,28 +33,31 @@ export class CommonService {
         );
     }
     getMainchatData(username:string): Observable<any> {
-      return this.http.get(this.baseURL + '/users/'+username+"/abc").pipe(
+      return this.http.get(this.baseURL + '/users/'+username+'/abc').pipe(
         catchError(this.handleError)
         );
     }
 
     getPieChartHousing(username:string): Observable<any> {
-        return this.http.get(this.baseURL + '/users/piechart/'+username+"/food").pipe(
+        return this.http.get(this.baseURL + '/users/piechart/'+username+'/housing/').pipe(
           catchError(this.handleError)
           );
     }
 
     getPieChartTravel(username:string): Observable<any> {
-      return this.http.get(this.baseURL + '/users/piechart/'+username+"/travel").pipe(
+      return this.http.get(this.baseURL + '/users/piechart/'+username+'/travel/').pipe(
         catchError(this.handleError)
         );
   }
 
   getPieChartFood(username:string): Observable<any> {
-      return this.http.get(this.baseURL + '/users/piechart'+username+"/food").pipe(
+      return this.http.get(this.baseURL + '/users/piechart/'+username+'/food/').pipe(
         catchError(this.handleError)
         );
 }
+getBarChart(username:string): Observable<any> {
+  return this.getMainchatData(username);
+  }
 
 
     handleError(error: HttpErrorResponse) {

@@ -44,15 +44,11 @@ export class DashboardComponent implements OnInit {
   pieChartHousing :any[] = [];
   pieChartTravel :any[] = [];
   pieChartFood:any[]=[];
-  pieChartProducts:any[]=[];
-  pieChartServices:any[]=[];
+  barChartData:any[]=[];
 
   pieChartHousingTitle :string="Housing";
   pieChartTravelTitle :string="Travel";
   pieChartFoodTitle:string="Foods";
-  pieChartProductsTitle:string="Products";
-  pieChartServicesTitle:string="Services";
-
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
@@ -65,8 +61,7 @@ export class DashboardComponent implements OnInit {
     this.pieChartHousing = [];
     this.pieChartTravel = [];
     this.pieChartFood=[];
-    this.pieChartProducts=[];
-    this.pieChartServices=[];
+    this.barChartData=[];
    }
 
   ngOnInit() {
@@ -75,9 +70,7 @@ export class DashboardComponent implements OnInit {
     this.getPieChartHousing();
     this.getPieChartFood();
     this.getPieChartTravel();
-   
-    // this.cards = this.dashboardService.cards();
-    // this.dataSource.paginator = this.paginator;
+    this.getBarChart();
   }
 
  getbigChartData()
@@ -96,5 +89,19 @@ getPieChartTravel()
 {
   this.commonService.getPieChartTravel(this.user.email).subscribe((data:any[])=>this.pieChartTravel=data);
 } 
-
+getBarChart()
+{
+  this.commonService.getBarChart(this.user.email).subscribe((data:any[])=>{
+    this.barChartData=[
+      {
+        name: 'Current Emission',
+        data: [814, 841, 3714]
+    },
+   {
+      name: 'Future Emission',
+      data: [693, 785, 2414]
+  }
+    ];
+  });
+} 
 }

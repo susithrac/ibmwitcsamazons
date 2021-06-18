@@ -15,6 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
+import { BarComponent } from './widgets/bar/bar.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MatListModule } from '@angular/material/list';
     SidebarComponent,
     AreaComponent,
     CardComponent,
-    PieComponent
+    PieComponent,
+    BarComponent
   ],
   imports: [
     CommonModule,
@@ -43,7 +45,8 @@ import { MatListModule } from '@angular/material/list';
     SidebarComponent,
     AreaComponent,
     CardComponent,
-    PieComponent
+    PieComponent,
+    BarComponent
   ]
 })
 export class SharedModule { }

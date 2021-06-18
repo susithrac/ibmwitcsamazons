@@ -1,22 +1,35 @@
-# Submission name
+# Track and reduce Carbon Footprint
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lacinia nisi ut fringilla sodales. Etiam elementum a arcu vel fringilla. Nulla ac efficitur felis. In a nisi bibendum, efficitur felis vel, consectetur quam. Aenean ornare justo velit, sed malesuada massa efficitur ut. Sed non augue vel risus tempus lacinia ac nec est. Nunc vel finibus felis. Vivamus felis diam, porta sed rhoncus eu, luctus eget justo. 
+Climate change and global warming are widely acknowledged as present challenges that have severe consequences for humanity and are mostly caused by GHG(Green House Gas) emissions from industrial and other anthropogenic activities.Restoring the ecological balance necessitates immediate reductions in GHG emissions. 
 
-Mauris odio ante, rhoncus et varius vel, vulputate et enim. Aliquam erat volutpat. Proin lacinia libero velit, a dictum sapien ultricies quis. Vivamus dolor nibh, efficitur in ipsum vitae, faucibus eleifend felis. Praesent consectetur turpis sit amet lorem tempor cursus. Nullam nec lectus massa. Proin feugiat placerat nisi lacinia lobortis. Duis efficitur ac orci ac lobortis.
+The total amount of greenhouse gases (GHG) produced to sustain a person's lifestyle and activities, both directly and indirectly, is referred to as a carbon footprint. Carbon footprints are commonly quantified in equivalent tonnes of CO2 over the course of a year and can be linked to a person, a company, a product, or an event, among other things.
+
+The application aims in accepting input values from the individual's regarding their energy consumptions and produces them the overall carbon footprint which helps to keep a track of their day-to-day activies in reducing their carbon emission.
 
 [Project website](https://sample-project.s3-web.us-east.cloud-object-storage.appdomain.cloud/)
 
-## Section 1
+## Sections
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lacinia nisi ut fringilla sodales. Etiam elementum a arcu vel fringilla. Nulla ac efficitur felis. In a nisi bibendum, efficitur felis vel, consectetur quam. Aenean ornare justo velit, sed malesuada massa efficitur ut. Sed non augue vel risus tempus lacinia ac nec est. Nunc vel finibus felis. Vivamus felis diam, porta sed rhoncus eu, luctus eget justo. 
+The application includes 3 sections. The Home page, Dashboard page and the Article page.
 
 ### Subsection 1.1
 
-Mauris odio ante, rhoncus et varius vel, vulputate et enim. Aliquam erat volutpat. Proin lacinia libero velit, a dictum sapien ultricies quis. Vivamus dolor nibh, efficitur in ipsum vitae, faucibus eleifend felis.
+The homepage contains the calculation for carbon emission. The user can select the month and year from the drop down and input the values of the energy consumed for their daily activities, 
+through which the user obtains their carbon footprint per year. There are three entities Housing, Travel and Food. The Housing entity contains various attributes such as electricity, 
+Fuel oil etc where the user enters the energy consumed by them in the respective units mentioned. Once the values are submitted for all the entities, the total Carbon Footprint is 
+calculated and displayed to the user.
 
 ### Subsection 1.2
 
-Nullam nec lectus massa. Proin feugiat placerat nisi lacinia lobortis. Duis efficitur ac orci ac lobortis.
+The Dashboard page provides graphical representation using pie chart for the calculated Carbon Footprint for the user entered inputs.
+
+### Subsection 1.3
+
+The articles page contains information about the causes and remedies to reduce the individual Carbon footprints for various entites like housing, travel, product, food ,services and planting.
+
+### Subsection 1.4
+
+The Team page contains information about the team involved in the project and links to their github accounts.
 
 ## Conclusion
 
@@ -25,8 +38,9 @@ lower carbon emissions, ever since the planning and design phase. Calculating th
 
 ### Results
 
-Nullam nec lectus massa. Proin feugiat placerat nisi lacinia lobortis. Duis efficitur ac orci ac lobortis.
+The Carbon Footprint is calculated for the user entered values and the data is displayed to the use. The users can aso see the graphical representation of the submitted data under the 
+dashboard section of the application . Using this approach theuser is made aware of the energy that he consumes and the Carbon Footprint that he produces which he can control.
 
 ## Acknowledgments
 
-Nullam nec lectus massa. Proin feugiat placerat nisi lacinia lobortis. Duis efficitur ac orci ac lobortis.
+We would like to thank the IBM team for giving us an opportunity to work on various cloud services and thank each and everyone in the development team.

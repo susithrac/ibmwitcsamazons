@@ -40,6 +40,7 @@ import { PlantingComponent } from './planting/planting.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatSelectModule} from '@angular/material/select';
+import { TeamComponent } from './team/team.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +54,8 @@ import {MatSelectModule} from '@angular/material/select';
     ProductComponent,
     FoodComponent,
     ServiceComponent,
-    PlantingComponent
+    PlantingComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,

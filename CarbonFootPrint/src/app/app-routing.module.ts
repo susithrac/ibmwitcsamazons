@@ -10,6 +10,7 @@ import { ProductComponent } from './product/product.component';
 import { FoodComponent } from './food/food.component';
 import { ServiceComponent } from './service/service.component';
 import { PlantingComponent } from './planting/planting.component';
+import { TeamComponent } from './team/team.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'food', component: FoodComponent},
   { path: 'service', component: ServiceComponent},
   { path: 'planting', component: PlantingComponent},
+  { path: 'team', component: TeamComponent}
 ];
 
 @NgModule({

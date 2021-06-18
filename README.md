@@ -107,10 +107,6 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-<a href="https://github.com/Call-for-Code/Project-Sample/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=Call-for-Code/Project-Sample" />
-</a>
-
 - [Amol B Lande](https://github.com/amoll)
 - [Susithra Chandrabose](https://github.com/susithrac)
 - [Megha M](https://github.com/megha-30)
@@ -122,4 +118,4 @@ This project is licensed under the Apache 2 License - see the [LICENSE](LICENSE)
 
 ## Acknowledgments
 
-- Based on [Billie Thompson's README template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2).
+We would like to thank the IBM team for giving us an opportunity to work on various cloud services and thank each and everyone in the development team.

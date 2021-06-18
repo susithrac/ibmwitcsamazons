@@ -72,34 +72,30 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.commonService.GetUserData.subscribe(user => this.user = user);
-    
-    //Static data for Main chart
-    // this.bigChart = this.dashboardService.bigChart();
-     
-    //Dynamic data for char
     this.getbigChartData();
+    this.getPieChartHousing();
+    this.getPieChartFood();
+    this.getPieChartTravel();
    
-    this.cards = this.dashboardService.cards();
-    this.pieChartHousing = this.dashboardService.pieChartHousing();
-    this.pieChartTravel = this.dashboardService.pieChartTravel();
-    this.pieChartFood = this.dashboardService.pieChartFood();
-    this.pieChartProducts = this.dashboardService.pieChartProducts();
-    this.pieChartServices = this.dashboardService.pieChartServices();
-    this.dataSource.paginator = this.paginator;
+    // this.cards = this.dashboardService.cards();
+    // this.dataSource.paginator = this.paginator;
   }
 
  getbigChartData()
  {
   this.commonService.getMainchatData(this.user.email).subscribe((data:any[])=>this.bigChart=data);
 }
-    
-//     {
-//  let arry=[];
-//     data.forEach(function (item) {
-//       arry.push(item);
-//         });
-//         this.bigChart=arry;
-//         console.log(this.bigChart)
-//   });
+getPieChartFood()
+{
+  this.commonService.getPieChartFood(this.user.email).subscribe((data:any[])=>this.pieChartFood=data);
+}
+getPieChartHousing()
+{
+  this.commonService.getPieChartHousing(this.user.email).subscribe((data:any[])=>this.pieChartHousing=data);
+} 
+getPieChartTravel()
+{
+  this.commonService.getPieChartTravel(this.user.email).subscribe((data:any[])=>this.pieChartTravel=data);
+} 
 
 }

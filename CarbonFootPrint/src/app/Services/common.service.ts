@@ -17,7 +17,7 @@ export class CommonService {
   baseURL:string="https://csamazons-toolchain.eu-gb.mybluemix.net"
 
   constructor(private http: HttpClient) {
-    this.user.email="amolhackthontest@gmail.com";
+    //this.user.email="amolhackthontest@gmail.com";
    }
 
   SetUser(setUser: User) {
@@ -37,6 +37,24 @@ export class CommonService {
         catchError(this.handleError)
         );
     }
+
+    getPieChartHousing(username:string): Observable<any> {
+        return this.http.get(this.baseURL + '/users/piechart/'+username+"/food").pipe(
+          catchError(this.handleError)
+          );
+    }
+
+    getPieChartTravel(username:string): Observable<any> {
+      return this.http.get(this.baseURL + '/users/piechart/'+username+"/travel").pipe(
+        catchError(this.handleError)
+        );
+  }
+
+  getPieChartFood(username:string): Observable<any> {
+      return this.http.get(this.baseURL + '/users/piechart'+username+"/food").pipe(
+        catchError(this.handleError)
+        );
+}
 
 
     handleError(error: HttpErrorResponse) {

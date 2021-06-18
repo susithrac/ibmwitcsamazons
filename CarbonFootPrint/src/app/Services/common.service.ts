@@ -17,7 +17,7 @@ export class CommonService {
   baseURL:string="https://csamazons-toolchain.eu-gb.mybluemix.net"
 
   constructor(private http: HttpClient) {
- // this.user.email="amolhackthontest@gmail.com";
+  //this.user.email="lande.amol.b@gmail.com";
    }
 
   SetUser(setUser: User) {
@@ -55,6 +55,9 @@ export class CommonService {
         catchError(this.handleError)
         );
 }
+getBarChart(username:string): Observable<any> {
+  return this.getMainchatData(username);
+  }
 
 
     handleError(error: HttpErrorResponse) {

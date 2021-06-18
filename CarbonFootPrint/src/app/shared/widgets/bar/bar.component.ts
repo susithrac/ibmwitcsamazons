@@ -1,40 +1,61 @@
-
-import HC_exporting from 'highcharts/modules/exporting';
 import { Component, OnInit, Input, OnChanges, SimpleChange, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
 import * as Highcharts from 'highcharts';
 @Component({
-  selector: 'app-widget-pie',
-  templateUrl: './pie.component.html',
-  styleUrls: ['./pie.component.scss']
+  selector: 'app-widget-bar',
+  templateUrl: './bar.component.html',
+  styleUrls: ['./bar.component.scss']
 })
-
-export class PieComponent implements OnInit, OnChanges {
-  @Input() data = [];
-  @Input() chartTitle:string='Title';
+export class BarComponent implements OnInit {
   updateFromInput = false;
   chart;
   chartOptions: Highcharts.Options = {
     chart: {
-      plotBackgroundColor: null,
-      plotBorderWidth: null,
-      plotShadow: false,
-      type: 'pie'
+      type: 'bar'
     },
     title: {
-      text: this.chartTitle
+      text: 'Future analysis Carbon Footprint'
     },
+    subtitle: {
+      text: 'Your can reduce your emissions'
+    },
+    xAxis: {
+      categories: ['Housing', 'Traves', 'Food'],
+      title: {
+          text: null
+      }
+  },
+  yAxis: {
+      min: 0,
+      title: {
+          text: 'Co2 emmisions (millions)',
+          align: 'high'
+      },
+      labels: {
+          overflow: 'justify'
+      }
+  },
     tooltip: {
-      pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+      split: true,
+      valueSuffix: ' Kgs'
     },
     plotOptions: {
-      pie: {
-        allowPointSelect: true,
-        cursor: 'pointer',
-        dataLabels: {
-          enabled: true,
-          format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-        }
+      bar: {
+          dataLabels: {
+              enabled: true
+          }
       }
+  },
+  legend: {
+    layout: 'vertical',
+    align: 'right',
+    verticalAlign: 'top',
+    x: -40,
+    y: 80,
+    floating: true,
+    borderWidth: 1,
+    backgroundColor:
+        Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+    shadow: true
     },
     credits: {
       enabled: false
@@ -47,11 +68,13 @@ export class PieComponent implements OnInit, OnChanges {
   chartConstructor = "chart";
   chartCallback;
 
+  @Input() data: any = [];
 
   Highcharts = Highcharts;
 
   constructor() {
     const self = this;
+
     // saving chart reference using chart callback
     this.chartCallback = chart => {
       self.chart = chart;
@@ -59,7 +82,6 @@ export class PieComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-
     setTimeout(() => {
       window.dispatchEvent(
         new Event('resize')
@@ -69,27 +91,14 @@ export class PieComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(change: SimpleChanges) {
-    if(change.chartTitle)
-    {
-      this.chartTitle=change.chartTitle.currentValue;
-    }
     if (change.data.currentValue && change.data.currentValue.length > 0) {
       const self = this,
         chart = this.chart;
       chart.showLoading();
         self.updateFromInput = true;
-        self.chartOptions.title.text=this.chartTitle;
-        self.chartOptions.series = [
-          {
-                    name: 'Brands',
-                    colorByPoint: true,
-                    data:  change.data.currentValue,
-                    type:undefined
-                  }
-         ];
+        self.chartOptions.series = change.data.currentValue;
         chart.hideLoading();
     }
     console.log(change);
   }
-
 }

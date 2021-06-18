@@ -23,8 +23,8 @@ export class WelcomeComponent implements OnInit {
   async ngOnInit() {
     try {
       await this.appid.init({
-        clientId: 'c9ca1538-60d2-412d-8a73-4cbaff00daeb',
-        discoveryEndpoint: 'https://eu-gb.appid.cloud.ibm.com/oauth/v4/791292fb-11b7-4cef-a94c-fa9ead9f5f4e/.well-known/openid-configuration'
+        clientId: '38a66370-ceb3-4878-89ab-57cf3a3a7984',
+        "discoveryEndpoint": "https://eu-gb.appid.cloud.ibm.com/oauth/v4/cbd1c84c-fa8e-494e-92fc-898d621f6be8/.well-known/openid-configuration"
       });
     } catch (e) {
       this.errorMessage = e.message;

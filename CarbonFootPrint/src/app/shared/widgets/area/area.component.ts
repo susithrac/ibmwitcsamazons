@@ -1,49 +1,59 @@
-import { Component, OnInit, Input, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChange, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
 
-
+HC_exporting(Highcharts);
 @Component({
   selector: 'app-widget-area',
   templateUrl: './area.component.html',
-  styleUrls: ['./area.component.scss']
+  styleUrls: ['./area.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AreaComponent implements OnInit, OnChanges {
 
-  chartOptions: {};
+  updateFromInput = false;
+  chart;
+  chartOptions: Highcharts.Options = {
+    chart: {
+      type: 'area'
+    },
+    title: {
+      text: 'Carbon Footprint'
+    },
+    subtitle: {
+      text: 'Your annual emissions'
+    },
+    tooltip: {
+      split: true,
+      valueSuffix: ' Kgs'
+    },
+    credits: {
+      enabled: false
+    },
+    exporting: {
+      enabled: true,
+    },
+    series: []
+  };
+  chartConstructor = "chart";
+  chartCallback;
+
   @Input() data: any = [];
 
   Highcharts = Highcharts;
 
   constructor() {
-    this.chartOptions = {};
+    const self = this;
+
+    // saving chart reference using chart callback
+    this.chartCallback = chart => {
+      self.chart = chart;
+    };
   }
 
   ngOnInit() {
-    /*this.chartOptions = {
-      chart: {
-        type: 'area'
-      },
-      title: {
-        text: 'Carbon Footprint'
-      },
-      subtitle: {
-        text: 'Your annual emissions'
-      },
-      tooltip: {
-        split: true,
-        valueSuffix: ' Kgs'
-      },
-      credits: {
-        enabled: false
-      },
-      exporting: {
-        enabled: true,
-      },
-      series: this.data
-    };
 
-    HC_exporting(Highcharts); */
+    //HC_exporting(Highcharts); 
 
     setTimeout(() => {
       window.dispatchEvent(
@@ -52,32 +62,17 @@ export class AreaComponent implements OnInit, OnChanges {
     }, 300);
 
   }
+
   ngOnChanges(change: SimpleChanges) {
     if (change.data.currentValue && change.data.currentValue.length > 0) {
-      this.chartOptions = {
-        chart: {
-          type: 'area'
-        },
-        title: {
-          text: 'Carbon Footprint'
-        },
-        subtitle: {
-          text: 'Your annual emissions'
-        },
-        tooltip: {
-          split: true,
-          valueSuffix: ' Kgs'
-        },
-        credits: {
-          enabled: false
-        },
-        exporting: {
-          enabled: true,
-        },
-        series: change.data.currentValue
-      };
-      HC_exporting(Highcharts);
-      //Call Chart Update function here 
+      // this.chartOptions.series = change.data.currentValue;
+      // this.updateFromInput = true;
+      const self = this,
+        chart = this.chart;
+      chart.showLoading();
+        self.updateFromInput = true;
+        self.chartOptions.series = change.data.currentValue;
+        chart.hideLoading();
     }
     console.log(change);
   }
